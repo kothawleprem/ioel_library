@@ -2,6 +2,7 @@ import React from 'react'
 import QRcodegen from "./qrcode"
 import { useEffect, useState } from 'react'
 
+
 const Menu = () => {
     const [data, setData] = useState("");
     const [isClicked, setIsClicked] = useState(false)
@@ -16,9 +17,19 @@ const Menu = () => {
 
   return (
     <div>
-        <button onClick={() => setIsClicked(!isClicked)}>Get QR</button>
-        {isClicked && <QRcodegen code={data}/>}
-        <button>Done QR</button>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <button onClick={() => setIsClicked(!isClicked)}>Get QR</button>
+            {isClicked && <QRcodegen code={data}/>}
+            <button>Done QR</button>
+          </div>
+          <div className="col-md-6">
+         
+          </div>
+        </div>
+      </div>
+        
         
     </div>
   )
